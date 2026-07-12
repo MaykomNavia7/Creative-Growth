@@ -1,0 +1,114 @@
+/**
+ * @repo/tailwind-config — Keyframe Animations
+ *
+ * Standalone keyframes for the Creative Growth design system.
+ * Import separately if you only need animations without the full theme:
+ *   @import "@repo/tailwind-config/keyframes.css";
+ *
+ * Or use the full bundle:
+ *   @import "@repo/tailwind-config/index.css";
+ */
+
+/* ─── Opacity ────────────────────────────────────────────────────────────── */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* ─── Slide ──────────────────────────────────────────────────────────────── */
+
+@keyframes slide-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes slide-in-down {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0);     }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-16px); }
+  to   { opacity: 1; transform: translateX(0);     }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(16px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+
+/* ─── Scale ──────────────────────────────────────────────────────────────── */
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1);    }
+}
+
+@keyframes scale-out {
+  from { opacity: 1; transform: scale(1);    }
+  to   { opacity: 0; transform: scale(0.92); }
+}
+
+/* ─── Loading ────────────────────────────────────────────────────────────── */
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1;   }
+  50%       { opacity: 0.5; }
+}
+
+/* ─── Glow ───────────────────────────────────────────────────────────────── */
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(139, 92, 246, 0.65);
+  }
+}
+
+@keyframes pulse-glow-emerald {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(16, 185, 129, 0.65);
+  }
+}
+
+@keyframes pulse-glow-rose {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(244, 63, 94, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(244, 63, 94, 0.65);
+  }
+}
+
+/* ─── Spatial ────────────────────────────────────────────────────────────── */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px);  }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0);   animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
+  50%       { transform: translateY(-6px); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+}

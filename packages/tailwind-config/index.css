@@ -1,0 +1,17 @@
+/**
+ * @repo/tailwind-config — Full Bundle
+ *
+ * Imports the complete Creative Growth design system:
+ *   - theme.css    → design tokens (@theme: colors, fonts, spacing, shadows, etc.)
+ *   - keyframes.css → animation @keyframes
+ *
+ * Usage in any app's global CSS:
+ *   @import "@repo/tailwind-config/index.css";
+ *
+ * Or import selectively:
+ *   @import "@repo/tailwind-config/theme.css";      ← tokens only
+ *   @import "@repo/tailwind-config/keyframes.css";  ← keyframes only
+ */
+
+@import "./theme.css";
+@import "./keyframes.css";
