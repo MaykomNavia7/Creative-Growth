@@ -1,10 +1,10 @@
-import { colors } from "./tokens/colors.js";
-import { typography } from "./tokens/typography.js";
-import { spacing } from "./tokens/spacing.js";
-import { radius } from "./tokens/radius.js";
-import { shadows } from "./tokens/shadows.js";
-import { animations } from "./tokens/animations.js";
-import { breakpoints } from "./tokens/breakpoints.js";
+import { colors } from "./tokens/colors";
+import { typography } from "./tokens/typography";
+import { spacing } from "./tokens/spacing";
+import { radius } from "./tokens/radius";
+import { shadows } from "./tokens/shadows";
+import { animations } from "./tokens/animations";
+import { breakpoints } from "./tokens/breakpoints";
 
 export {
   colors,

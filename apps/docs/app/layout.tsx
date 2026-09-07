@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import localFont from "next/font/local";
+import { colors } from "@repo/design-system";
 import "./globals.css";
 
 // ─── Font Registration ────────────────────────────────────────────────────────
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#09090b",
+  themeColor: colors.bg,
   colorScheme: "dark",
   width: "device-width",
   initialScale: 1,

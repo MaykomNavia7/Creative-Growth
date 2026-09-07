@@ -260,44 +260,44 @@ export default function PracticeRoom() {
 
       {/* METRONOME TAB */}
       {activeTab === "metronome" && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border border-white/5 bg-[#07041c]/45 p-8 rounded-3xl backdrop-blur-xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border border-border bg-surface/45 p-8 rounded-3xl backdrop-blur-xl">
           {/* Controls */}
           <div className="space-y-8">
             <div>
-              <h3 className="font-heading font-extrabold text-2xl text-white mb-2">Práctica de Tempo</h3>
-              <p className="text-xs text-slate-400">Desarrolla precisión rítmica. Utiliza el deslizador o presiona TAP rítmicamente para ajustar los BPM.</p>
+              <h3 className="font-heading font-extrabold text-2xl text-foreground mb-2">Práctica de Tempo</h3>
+              <p className="text-xs text-foreground-muted">Desarrolla precisión rítmica. Utiliza el deslizador o presiona TAP rítmicamente para ajustar los BPM.</p>
             </div>
 
             {/* BPM Display & Buttons */}
-            <div className="flex items-center justify-between gap-6 bg-white/5 p-6 rounded-2xl border border-white/5">
+            <div className="flex items-center justify-between gap-6 bg-surface p-6 rounded-2xl border border-border">
               <div className="flex gap-2">
                 <button 
                   onClick={() => setBpm(b => Math.max(40, b - 5))}
-                  className="w-10 h-10 rounded-lg bg-white/5 border border-white/5 text-xs font-bold hover:bg-white/10"
+                  className="w-10 h-10 rounded-lg bg-surface-raised border border-border text-xs font-bold hover:bg-surface-overlay"
                 >
                   -5
                 </button>
                 <button 
                   onClick={() => setBpm(b => Math.max(40, b - 1))}
-                  className="w-10 h-10 rounded-lg bg-white/5 border border-white/5 text-xs font-bold hover:bg-white/10"
+                  className="w-10 h-10 rounded-lg bg-surface-raised border border-border text-xs font-bold hover:bg-surface-overlay"
                 >
                   -1
                 </button>
               </div>
               <div className="text-center">
-                <span className="font-mono text-5xl font-extrabold text-white leading-none">{bpm}</span>
-                <span className="block text-[10px] text-slate-500 font-bold uppercase tracking-wider mt-1">BPM</span>
+                <span className="font-mono text-5xl font-extrabold text-foreground leading-none">{bpm}</span>
+                <span className="block text-[10px] text-foreground-subtle font-bold uppercase tracking-wider mt-1">BPM</span>
               </div>
               <div className="flex gap-2">
                 <button 
                   onClick={() => setBpm(b => Math.min(240, b + 1))}
-                  className="w-10 h-10 rounded-lg bg-white/5 border border-white/5 text-xs font-bold hover:bg-white/10"
+                  className="w-10 h-10 rounded-lg bg-surface-raised border border-border text-xs font-bold hover:bg-surface-overlay"
                 >
                   +1
                 </button>
                 <button 
                   onClick={() => setBpm(b => Math.min(240, b + 5))}
-                  className="w-10 h-10 rounded-lg bg-white/5 border border-white/5 text-xs font-bold hover:bg-white/10"
+                  className="w-10 h-10 rounded-lg bg-surface-raised border border-border text-xs font-bold hover:bg-surface-overlay"
                 >
                   +5
                 </button>
@@ -312,9 +312,9 @@ export default function PracticeRoom() {
                 max="240" 
                 value={bpm} 
                 onChange={(e) => setBpm(Number(e.target.value))}
-                className="w-full accent-violet-600 bg-white/10 rounded-lg appearance-none h-2 cursor-pointer"
+                className="w-full accent-primary bg-surface-raised rounded-lg appearance-none h-2 cursor-pointer"
               />
-              <div className="flex justify-between text-[10px] font-bold text-slate-600 font-mono">
+              <div className="flex justify-between text-[10px] font-bold text-foreground-subtle font-mono">
                 <span>LENTO (40)</span>
                 <span>MODERADO (120)</span>
                 <span>RÁPIDO (240)</span>
@@ -324,11 +324,11 @@ export default function PracticeRoom() {
             {/* Select options row */}
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-500">Métricas</label>
+                <label className="text-xs font-bold text-foreground-subtle">Métricas</label>
                 <select
                   value={timeSignature}
                   onChange={(e) => setTimeSignature(e.target.value)}
-                  className="w-full bg-[#030014] text-slate-300 border border-white/5 rounded-xl px-4 py-2.5 text-sm"
+                  className="w-full bg-bg-subtle text-foreground-muted border border-border rounded-xl px-4 py-2.5 text-sm"
                 >
                   <option value="4/4">4 / 4</option>
                   <option value="3/4">3 / 4</option>
@@ -337,11 +337,11 @@ export default function PracticeRoom() {
                 </select>
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-500">Sonido</label>
+                <label className="text-xs font-bold text-foreground-subtle">Sonido</label>
                 <select
                   value={soundType}
                   onChange={(e) => setSoundType(e.target.value as any)}
-                  className="w-full bg-[#030014] text-slate-300 border border-white/5 rounded-xl px-4 py-2.5 text-sm"
+                  className="w-full bg-bg-subtle text-foreground-muted border border-border rounded-xl px-4 py-2.5 text-sm"
                 >
                   <option value="woodblock">Caja Madera</option>
                   <option value="ping">Ping Digital</option>
@@ -421,25 +421,25 @@ export default function PracticeRoom() {
 
       {/* KEYBOARD TAB */}
       {activeTab === "keyboard" && (
-        <div className="border border-white/5 bg-[#07041c]/45 p-8 rounded-3xl backdrop-blur-xl space-y-6">
+        <div className="border border-border bg-surface/45 p-8 rounded-3xl backdrop-blur-xl space-y-6">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div>
-              <h3 className="font-heading font-extrabold text-2xl text-white mb-1">Teclado MIDI Interactivo</h3>
-              <p className="text-xs text-slate-400">Utiliza el mouse, las teclas de tu computadora (A-S-D-F...) o conecta un teclado MIDI USB.</p>
+              <h3 className="font-heading font-extrabold text-2xl text-foreground mb-1">Teclado MIDI Interactivo</h3>
+              <p className="text-xs text-foreground-muted">Utiliza el mouse, las teclas de tu computadora (A-S-D-F...) o conecta un teclado MIDI USB.</p>
             </div>
             
             {/* Status bar */}
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 border border-white/5 text-xs text-slate-300 font-medium">
-              <div className={`w-2.5 h-2.5 rounded-full ${midiStatus.startsWith("Conectado") ? "bg-teal-400 shadow-md shadow-teal-500/30 animate-pulse" : "bg-slate-600"}`} />
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface border border-border text-xs text-foreground-muted font-medium">
+              <div className={`w-2.5 h-2.5 rounded-full ${midiStatus.startsWith("Conectado") ? "bg-secondary shadow-md shadow-glow-secondary/30 animate-pulse" : "bg-foreground-subtle"}`} />
               {midiStatus}
             </div>
           </div>
 
           {/* Active chord readout */}
-          <div className="flex items-center justify-between bg-[#030014] p-4 rounded-xl border border-white/5 min-h-[56px]">
-            <div className="text-xs text-slate-500">Notas presionadas: <span className="font-mono text-slate-300 font-semibold">{activeNotes.join(" - ") || "Ninguna"}</span></div>
+          <div className="flex items-center justify-between bg-bg-subtle p-4 rounded-xl border border-border min-h-[56px]">
+            <div className="text-xs text-foreground-subtle">Notas presionadas: <span className="font-mono text-foreground-muted font-semibold">{activeNotes.join(" - ") || "Ninguna"}</span></div>
             {activeChord && (
-              <div className="px-3 py-1 bg-teal-500/10 border border-teal-500/20 text-teal-300 rounded-lg text-sm font-extrabold tracking-wide flex items-center gap-1.5 animate-pulse">
+              <div className="px-3 py-1 bg-secondary-muted border border-secondary/20 text-secondary-light rounded-lg text-sm font-extrabold tracking-wide flex items-center gap-1.5 animate-pulse">
                 <Sparkles className="w-3.5 h-3.5" />
                 {activeChord}
               </div>
@@ -447,7 +447,7 @@ export default function PracticeRoom() {
           </div>
 
           {/* Interactive virtual piano keyboard */}
-          <div className="relative flex justify-center bg-[#030014] p-6 rounded-2xl border border-white/5 select-none overflow-x-auto min-w-full">
+          <div className="relative flex justify-center bg-bg-subtle p-6 rounded-2xl border border-border select-none overflow-x-auto min-w-full">
             <div className="flex relative h-60 min-w-[700px]">
               {/* White keys */}
               {Object.keys(NOTE_FREQS)
@@ -595,17 +595,17 @@ export default function PracticeRoom() {
         </div>
       )}
 
-      {/* NOTATION PRACTICE TAB */}
+      {/* NOTATION TAB */}
       {activeTab === "notation" && (
-        <div className="border border-white/5 bg-[#07041c]/45 p-8 rounded-3xl backdrop-blur-xl space-y-6">
+        <div className="border border-border bg-surface/45 p-8 rounded-3xl backdrop-blur-xl space-y-6">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <h3 className="font-heading font-extrabold text-2xl text-white mb-1">Práctica de Lectura</h3>
-              <p className="text-xs text-slate-400">Escucha la melodía y tócala en orden. Puedes hacer clic en las notas o tocar desde tu teclado.</p>
+              <h3 className="font-heading font-extrabold text-2xl text-foreground mb-1">Práctica de Lectura</h3>
+              <p className="text-xs text-foreground-muted">Escucha la melodía y tócala en orden. Puedes hacer clic en las notas o tocar desde tu teclado.</p>
             </div>
             <button
               onClick={resetMelody}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/5 text-xs text-slate-300 hover:text-white transition-colors"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface border border-border text-xs text-foreground-muted hover:text-foreground transition-colors"
             >
               <RotateCcw className="w-3.5 h-3.5" />
               Reiniciar Melodía
@@ -613,17 +613,17 @@ export default function PracticeRoom() {
           </div>
 
           {/* Gamified readout */}
-          <div className="flex items-center gap-3 p-4 bg-[#030014] border border-white/5 rounded-2xl min-h-[56px]">
+          <div className="flex items-center gap-3 p-4 bg-bg-subtle border border-border rounded-2xl min-h-[56px]">
             {isMelodyFinished ? (
-              <CheckCircle className="w-5 h-5 text-teal-400 animate-bounce shrink-0" />
+              <CheckCircle className="w-5 h-5 text-secondary animate-bounce shrink-0" />
             ) : (
-              <Volume2 className="w-5 h-5 text-violet-400 shrink-0 animate-pulse" />
+              <Volume2 className="w-5 h-5 text-primary-light shrink-0 animate-pulse" />
             )}
-            <p className="text-sm font-semibold text-slate-200">{scoreMessage}</p>
+            <p className="text-sm font-semibold text-foreground-muted">{scoreMessage}</p>
           </div>
 
           {/* Interactive SVG sheet music staff */}
-          <div className="w-full bg-[#030014] p-8 rounded-2xl border border-white/5 overflow-x-auto">
+          <div className="w-full bg-bg-subtle p-8 rounded-2xl border border-border overflow-x-auto">
             <svg 
               width="600" 
               height="180" 
@@ -638,22 +638,22 @@ export default function PracticeRoom() {
                   y1={y} 
                   x2="580" 
                   y2={y} 
-                  stroke="#475569" 
+                  stroke="var(--color-foreground-subtle)" 
                   strokeWidth="1.5" 
                 />
               ))}
 
               {/* Bar lines */}
-              <line x1="20" y1="60" x2="20" y2="100" stroke="#475569" strokeWidth="2.5" />
-              <line x1="300" y1="60" x2="300" y2="100" stroke="#475569" strokeWidth="1.5" />
-              <line x1="580" y1="60" x2="580" y2="100" stroke="#475569" strokeWidth="2.5" />
+              <line x1="20" y1="60" x2="20" y2="100" stroke="var(--color-foreground-subtle)" strokeWidth="2.5" />
+              <line x1="300" y1="60" x2="300" y2="100" stroke="var(--color-foreground-subtle)" strokeWidth="1.5" />
+              <line x1="580" y1="60" x2="580" y2="100" stroke="var(--color-foreground-subtle)" strokeWidth="2.5" />
 
               {/* Treble Clef Symbol Mock */}
-              <text x="30" y="105" fontSize="60" fontFamily="serif" fill="#8b5cf6" fontWeight="bold">𝄞</text>
+              <text x="30" y="105" fontSize="60" fontFamily="serif" fill="var(--color-primary)" fontWeight="bold">𝄞</text>
               
               {/* Time signature mock */}
-              <text x="75" y="80" fontSize="24" fontFamily="serif" fill="#94a3b8" fontWeight="bold">4</text>
-              <text x="75" y="100" fontSize="24" fontFamily="serif" fill="#94a3b8" fontWeight="bold">4</text>
+              <text x="75" y="80" fontSize="24" fontFamily="serif" fill="var(--color-foreground-muted)" fontWeight="bold">4</text>
+              <text x="75" y="100" fontSize="24" fontFamily="serif" fill="var(--color-foreground-muted)" fontWeight="bold">4</text>
 
               {/* Draw Melody Notes */}
               {MELODY.map((note, index) => {
@@ -663,14 +663,14 @@ export default function PracticeRoom() {
                 const isPassed = index < melodyIndex;
                 
                 // Color configuration
-                let fill = "#cbd5e1"; // normal gray note
+                let fill = "var(--color-foreground-muted)"; // normal gray note
                 let stroke = "none";
                 
                 if (isActive) {
-                  fill = "#f43f5e"; // bright active rose
-                  stroke = "#fecdd3";
+                  fill = "var(--color-accent)"; // bright active rose
+                  stroke = "var(--color-accent-light)";
                 } else if (isPassed || isMelodyFinished) {
-                  fill = "#10b981"; // success green
+                  fill = "var(--color-secondary)"; // success green
                 }
 
                 return (
@@ -695,7 +695,7 @@ export default function PracticeRoom() {
                         y1={y} 
                         x2={x + 12} 
                         y2={y} 
-                        stroke="#94a3b8" 
+                        stroke="var(--color-foreground-muted)" 
                         strokeWidth="2" 
                       />
                     )}
@@ -731,7 +731,7 @@ export default function PracticeRoom() {
                         cy={y} 
                         r="12" 
                         fill="none" 
-                        stroke="#f43f5e" 
+                        stroke="var(--color-accent)" 
                         strokeWidth="1" 
                         className="animate-ping"
                       />
