@@ -15,6 +15,20 @@ import {
   Music,
   ArrowRight
 } from "lucide-react";
+import {
+  Button,
+  Badge,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  Avatar,
+  Tooltip,
+  Code,
+  Stack,
+  Grid
+} from "@repo/ui";
 
 interface DocItem {
   title: string;
@@ -360,9 +374,9 @@ export default function DocsPage() {
                   <span className="text-[10px] text-foreground-subtle block mb-1">
                     {item.label}
                   </span>
-                  <code className="text-secondary-light font-bold">
+                  <Code className="text-secondary-light font-bold">
                     {item.cmd}
-                  </code>
+                  </Code>
                 </div>
                 <button
                   onClick={() => copyToClipboard(item.cmd, idx)}
@@ -378,6 +392,82 @@ export default function DocsPage() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Shared UI Component Showcase (@repo/ui) */}
+        <section className="mt-16 border border-border bg-bg-subtle/40 rounded-2xl p-6 backdrop-blur-glass space-y-6">
+          <div className="flex items-center justify-between border-b border-border/50 pb-4">
+            <div>
+              <h3 className="font-heading font-extrabold text-xl">Biblioteca de Componentes UI (@repo/ui)</h3>
+              <p className="text-foreground-muted text-xs mt-1">Demostración en vivo de los componentes primitivos de Sprint 1.6.</p>
+            </div>
+            <Badge variant="primary">Sprint 1.6</Badge>
+          </div>
+
+          <Grid cols={3} gap="md">
+            {/* Card 1: Buttons */}
+            <Card variant="outline">
+              <CardHeader>
+                <CardTitle>Botones & Variantes</CardTitle>
+                <CardDescription>Botones interactivos con tokens de diseño.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Stack direction="col" spacing="sm">
+                  <Stack direction="row" spacing="xs">
+                    <Button variant="primary" size="sm">Primary</Button>
+                    <Button variant="secondary" size="sm">Secondary</Button>
+                  </Stack>
+                  <Stack direction="row" spacing="xs">
+                    <Button variant="ghost" size="sm">Ghost</Button>
+                    <Button variant="outline" size="sm">Outline</Button>
+                  </Stack>
+                </Stack>
+              </CardContent>
+            </Card>
+
+            {/* Card 2: Badges & Avatars */}
+            <Card variant="outline">
+              <CardHeader>
+                <CardTitle>Badges & Avatares</CardTitle>
+                <CardDescription>Badges semánticas e indicadores de estado.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Stack direction="col" spacing="sm">
+                  <Stack direction="row" spacing="xs" align="center">
+                    <Badge variant="primary">Primary</Badge>
+                    <Badge variant="success">Success</Badge>
+                    <Badge variant="warning">Warning</Badge>
+                    <Badge variant="danger">Danger</Badge>
+                  </Stack>
+                  <Stack direction="row" spacing="sm" align="center">
+                    <Avatar name="Alejandro Silva" size="sm" status="online" />
+                    <Avatar name="María Ortega" size="sm" status="busy" />
+                    <Avatar name="Estudiante Demo" size="sm" status="away" />
+                  </Stack>
+                </Stack>
+              </CardContent>
+            </Card>
+
+            {/* Card 3: Tooltips & Layout */}
+            <Card variant="outline">
+              <CardHeader>
+                <CardTitle>Tooltips & Code</CardTitle>
+                <CardDescription>Tooltips accesibles y snippets inline.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Stack direction="col" spacing="sm">
+                  <Stack direction="row" spacing="xs" align="center">
+                    <Tooltip content="Tooltip flotante arriba" position="top">
+                      <Button variant="outline" size="sm">Hover Tooltip</Button>
+                    </Tooltip>
+                  </Stack>
+                  <p className="text-xs text-foreground-muted">
+                    Uso de componente: <Code>import {"{ Button }"} from &quot;@repo/ui&quot;;</Code>
+                  </p>
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
         </section>
       </main>
 
